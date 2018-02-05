@@ -353,6 +353,21 @@ frame {
   background: #00acdb;
   color: #fff;
 }
+.btn-primary-0 {
+  background: transparent;
+  color: #00acdb;
+  border: 1px solid #00acdb;
+  border-radius: 1px;
+  transition: all 300ms;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 7px 40px;
+}
+.btn-primary-0:hover,
+.btn-primary-0:focus {
+  background: #00acdb;
+  color: #fff;
+}
 .btn-grey {
   background: #becacf;
   color: #fff;
@@ -1630,9 +1645,18 @@ frame {
   width: 100%;
 }
 .blog-2.blog .blog-item-info {
-  background: #e4edee;
+  /* background: #e4edee; */
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.blog-item-info1 {
+  /* background: #e4edee; */
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .blog-2.blog .blog-item-date {
   background: #09729e;
@@ -1685,7 +1709,8 @@ frame {
 .blog-2.blog .blog-item-title h3 {
   font-size: 28px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 .blog-2.blog .blog-item-title h3 a {
   color: #233a46;
