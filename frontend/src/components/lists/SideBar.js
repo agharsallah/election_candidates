@@ -38,27 +38,27 @@ this.setState({min:res[0],max:res[1]});
                 <Checkbox
                   name="Party"
                 />
-                &nbsp; Party
+                 Party
             </label>
-              &nbsp;&nbsp;
+             
           </p>
             <p>
               <label>
                 <Checkbox
                   name="Independent"
                 />
-                &nbsp; Independent
+                 Independent
             </label>
-              &nbsp;&nbsp;
+              
           </p>
             <p>
               <label>
                 <Checkbox
                   name="Coalition"
                 />
-                &nbsp; Coalition
+                 Coalition
             </label>
-              &nbsp;&nbsp;
+              
           </p>
           </div>
           <p className='filterSubtitle'> Average age of Lists : </p>
@@ -78,9 +78,9 @@ this.setState({min:res[0],max:res[1]});
                   name="Male"
                   onChange={this.onChange.bind(this)}
                 />
-                &nbsp; Male
+                 Male
           </label>
-              &nbsp;&nbsp;
+              
         </p>
             <p>
               <label>
@@ -88,9 +88,9 @@ this.setState({min:res[0],max:res[1]});
                   name="Female"
                   onChange={this.onChange.bind(this)}
                 />
-                &nbsp; Female
+                 Female
           </label>
-              &nbsp;&nbsp;
+              
         </p>
 
           </div>
