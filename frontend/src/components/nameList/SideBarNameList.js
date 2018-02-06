@@ -5,8 +5,7 @@ import 'rc-checkbox/assets/index.css';
 import 'rc-slider/assets/index.css';
 import Slider from 'rc-slider';
 const Range = Slider.Range;
-import './lists.css'
-export default class SideBar extends Component {
+export default class SideBarNameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,7 +63,7 @@ this.setState({min:res[0],max:res[1]});
               &nbsp;&nbsp;
           </p>
           </div>
-          <p>* Average age of Lists : </p>
+          <p>* Average age in the List : </p>
           <div style={{ paddingBottom: '20px' }} >
             <div>
               <div className='wraperP'><p className='paragL'>Min= {this.state.min}</p> <p className='paragR'>Max= {this.state.max}</p></div>

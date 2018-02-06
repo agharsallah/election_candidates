@@ -41,8 +41,9 @@ export default class App extends Component {
     const ar = <Translate type="text" content="navbar.ar" />//arabe
     const fr = <Translate type="text" content="navbar.fr" />//francais
     const en = <Translate type="text" content="navbar.en" />//english
-    var link;
-    this.props.CmgFromList? link = `/lists/${this.props.CmgFromList}`:null
+    var linkList,linkNameList;
+    this.props.CmgFromList? linkList = `/lists/${this.props.CmgFromList}`:null
+    this.props.CmgFromNameList? linkNameList = `/lists/${this.props.CmgFromNameList}`:null
     return (
 
       <div className="top-menu" id="top-menu" style={{zIndex:'5000'}}>
@@ -57,7 +58,8 @@ export default class App extends Component {
               </div>
               <ul className="nav navbar-nav fullWidth">
                 <li className={this.props.home}><Link to="/">{home}</Link></li>
-                {link!=null?<li className='active'><Link to={link}>{this.props.CmgFromList}</Link></li>:null}
+                {linkList!=null?<li className={this.props.activeList}><Link to={linkList}>{this.props.CmgFromList}</Link></li>:null}
+                {linkNameList!=null?<li className={this.props.activeNameList}><Link to={linkNameList}>{this.props.CmgFromNameList}</Link></li>:null}
                 <li className={this.props.stat}><Link to="/stat">{stat}</Link></li>
                 <li className={this.props.about}><Link to="/about">{about}</Link></li>
 
