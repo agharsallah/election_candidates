@@ -10,7 +10,11 @@ export default class Lists extends Component {
   }
 
   componentWillMount() {
-    var munName = ((this.props.location.pathname).substring(7)).slice(0, -1)
+    let linkToTreat = this.props.location.pathname;
+    var patt =/lists\/(.*)\//g
+    var res = patt.exec(linkToTreat);
+    var munName = res[1]
+    //var munName = ((this.props.location.pathname).substring(7)).slice(0, -1)
     this.setState({ munName });
   }
 

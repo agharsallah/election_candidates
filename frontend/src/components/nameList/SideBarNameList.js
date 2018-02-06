@@ -9,15 +9,15 @@ export default class SideBarNameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      min: 0,
+      min: 18,
       max: 100,
     };
   }
   onChange(e) {
     console.log('Checkbox checked:', (e.target));
   }
-  sliderChange(res){
-this.setState({min:res[0],max:res[1]});
+  sliderChange(res) {
+    this.setState({ min: res[0], max: res[1] });
   }
   render() {
     //const aboutUs = <Translate type="text" content="navbar.aboutUs" />//about
@@ -29,16 +29,16 @@ this.setState({min:res[0],max:res[1]});
         </div>
         <div className="right-bar-categories">
           <h3 className="right-bar-title"><i className="fa fa-filter"></i> Filter</h3>
-          <p>* List Types : </p>
+          <p className='filterSubtitleFirst'> Special Conditions : </p>
 
           <div >
             <p>
               <label>
                 <Checkbox
                   name="Party"
-                  defaultChecked
+                  
                 />
-                &nbsp; Party
+                &nbsp; Handicaped
             </label>
               &nbsp;&nbsp;
           </p>
@@ -46,24 +46,15 @@ this.setState({min:res[0],max:res[1]});
               <label>
                 <Checkbox
                   name="Independent"
-                  defaultChecked
+                  
                 />
-                &nbsp; Independent
+                &nbsp; less than 35
             </label>
               &nbsp;&nbsp;
           </p>
-            <p>
-              <label>
-                <Checkbox
-                  name="Coalition"
-                  defaultChecked
-                />
-                &nbsp; Coalition
-            </label>
-              &nbsp;&nbsp;
-          </p>
+           
           </div>
-          <p>* Average age in the List : </p>
+          <p className='filterSubtitle'> Average age in the List : </p>
           <div style={{ paddingBottom: '20px' }} >
             <div>
               <div className='wraperP'><p className='paragL'>Min= {this.state.min}</p> <p className='paragR'>Max= {this.state.max}</p></div>
@@ -71,14 +62,14 @@ this.setState({min:res[0],max:res[1]});
 
             <Range defaultValue={[18, 100]} min={18} max={100} onChange={this.sliderChange.bind(this)} />
           </div>
-          <p>* Gender of List's Head  : </p>
+          <p className='filterSubtitle'> Gender : </p>
 
           <div >
             <p>
               <label>
                 <Checkbox
                   name="Male"
-                  defaultChecked
+                  
                   onChange={this.onChange.bind(this)}
                 />
                 &nbsp; Male
@@ -89,7 +80,7 @@ this.setState({min:res[0],max:res[1]});
               <label>
                 <Checkbox
                   name="Female"
-                  defaultChecked
+                  
                   onChange={this.onChange.bind(this)}
                 />
                 &nbsp; Female

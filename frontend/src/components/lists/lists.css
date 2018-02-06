@@ -14,3 +14,14 @@ float: left;
 .paragR{
 float: right;
 }
+.filterSubtitle{
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+    border-top: 1px solid;
+}
+.filterSubtitleFirst{
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+}

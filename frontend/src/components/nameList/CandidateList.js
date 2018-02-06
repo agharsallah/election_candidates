@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import Translate from 'react-translate-component';
 import Navbar from '../Navbar';
 import SideBarNameList from './SideBarNameList';
-import Card from './Card';
-import './nameList.css'
-
-export default class NameList extends Component {
+import CandidateCard from './CandidateCard';
+import './CandidateList.css'
+export default class CandidateList extends Component {
   constructor(props) {
     super(props);
     this.state = { munName: '' }
@@ -13,12 +12,12 @@ export default class NameList extends Component {
 
   componentWillMount() {
     let linkToTreat = this.props.location.pathname;
-    var listName=linkToTreat.replace(/\/.*\//g, "")
+    var listName = linkToTreat.replace(/\/.*\//g, "")
     //Get the munName from /lists/mornag/List Name a
-    var patt =/lists\/(.*)\//g
+    var patt = /lists\/(.*)\//g
     var res = patt.exec(linkToTreat);
     var munName = res[1]
-    this.setState({ munName,listName });
+    this.setState({ munName, listName });
   }
 
   render() {
@@ -32,12 +31,15 @@ export default class NameList extends Component {
           <div className="container">
             <div className="row">
               <SideBarNameList />
+
               <div className="blog-container col-lg-9 col-md-9 col-sm-9 col-xs-12">
                 <div className="row">
-                <Card hashtagColor='#09729e' listType='Party ' />
-
+                <CandidateCard name='Ahmed Ben Salah' age='40' profession='Lawyer'  gender='M' num='1' other='Head of List' />
+                <CandidateCard name='Jamila Mansouri' age='31' profession='Teacher'  gender='F' num='2' other='less than 35' />
+                <CandidateCard name='Jamel Ben Salah' age='37' profession='Carpenter'  gender='M' num='3' other=' Handicaped' /> 
                 </div>
               </div>
+
             </div>
           </div>
         </div>

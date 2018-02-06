@@ -42,8 +42,8 @@ export default class App extends Component {
     const fr = <Translate type="text" content="navbar.fr" />//francais
     const en = <Translate type="text" content="navbar.en" />//english
     var linkList,linkNameList;
-    this.props.CmgFromList? linkList = `/lists/${this.props.CmgFromList}`:null
-    this.props.CmgFromNameList? linkNameList = `/lists/${this.props.CmgFromNameList}`:null
+    this.props.CmgFromList? linkList = `/lists/${this.props.CmgFromList}/`:null
+    this.props.CmgFromNameList? linkNameList = `/lists/${this.props.CmgFromList}/${this.props.CmgFromNameList}/`:null
     return (
 
       <div className="top-menu" id="top-menu" style={{zIndex:'5000'}}>

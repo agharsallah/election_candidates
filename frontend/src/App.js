@@ -4,7 +4,7 @@ import Home from './components/home/Home';
 import Stat from './components/stat/Stat';
 import About from './components/about/About';
 import Lists from './components/lists/Lists';
-import NameList from './components/nameList/NameList';
+import CandidateList from './components/nameList/CandidateList';
 
 class App extends Component {
     render() {
@@ -14,7 +14,7 @@ class App extends Component {
                 <Route exact path="/stat" component={Stat} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/lists/:munName" component={Lists} />
-                <Route exact path="/lists/:munName/:listName" component={NameList} />
+                <Route exact path="/lists/:munName/:listName" component={CandidateList} />
             </Switch>
 
         );
