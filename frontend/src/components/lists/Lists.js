@@ -29,7 +29,9 @@ export default class Lists extends Component {
                 <div class="row">
                 <Card hashtagColor='#09729e' listType='Party ' />
                 <Card hashtagColor='#2491d0' listType='Coalition' />
+                <Card hashtagColor='#09729e' listType='Party ' />
                 <Card hashtagColor='#00acdb' listType='Independent' />
+
                 </div>
               </div>
             </div>

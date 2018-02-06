@@ -2,5 +2,15 @@
     background-repeat:no-repeat;
 background-size:contain;
 background-position:center;
-
+}
+/* putting 2 parag next to each other */
+.wraperP{
+    display: inline-block;
+    width: 100%;
+}
+.paragL{
+float: left;
+}
+.paragR{
+float: right;
 }
