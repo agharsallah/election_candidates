@@ -38,7 +38,7 @@ this.setState({min:res[0],max:res[1]});
                 <Checkbox
                   name="Party"
                 />
-                 Party
+                 &nbsp; Party
             </label>
              
           </p>
@@ -47,7 +47,7 @@ this.setState({min:res[0],max:res[1]});
                 <Checkbox
                   name="Independent"
                 />
-                 Independent
+                &nbsp; Independent
             </label>
               
           </p>
@@ -56,7 +56,7 @@ this.setState({min:res[0],max:res[1]});
                 <Checkbox
                   name="Coalition"
                 />
-                 Coalition
+                 &nbsp; Coalition
             </label>
               
           </p>
@@ -78,7 +78,7 @@ this.setState({min:res[0],max:res[1]});
                   name="Male"
                   onChange={this.onChange.bind(this)}
                 />
-                 Male
+                 &nbsp; Male
           </label>
               
         </p>
@@ -88,7 +88,7 @@ this.setState({min:res[0],max:res[1]});
                   name="Female"
                   onChange={this.onChange.bind(this)}
                 />
-                 Female
+                 &nbsp; Female
           </label>
               
         </p>

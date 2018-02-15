@@ -40,7 +40,7 @@ export default class SideBarNameList extends Component {
                 />
                 &nbsp; Handicaped
             </label>
-              &nbsp;&nbsp;
+              
           </p>
             <p>
               <label>
@@ -48,7 +48,7 @@ export default class SideBarNameList extends Component {
                   name="Independent"
                   
                 />
-                less than 35
+                &nbsp; less than 35
             </label>
               
           </p>
@@ -72,7 +72,7 @@ export default class SideBarNameList extends Component {
                   
                   onChange={this.onChange.bind(this)}
                 />
-                Male
+                &nbsp; Male
           </label>
               
         </p>
@@ -83,7 +83,7 @@ export default class SideBarNameList extends Component {
                   
                   onChange={this.onChange.bind(this)}
                 />
-                 Female
+                &nbsp; Female
           </label>
              
         </p>

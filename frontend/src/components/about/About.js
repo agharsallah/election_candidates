@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Translate    from 'react-translate-component';
 import Navbar from '../Navbar';
+import UnderConstruction from '../stat/UnderConstruction' ;
 
 export default class About extends Component {
   render() {
@@ -9,8 +10,8 @@ export default class About extends Component {
       <div>
       <div id="smartposition"></div>
       <Navbar home='' stat='' about='active' />
+      <UnderConstruction/>
 
-      <h1>About</h1>
       </div>
     );
   }
