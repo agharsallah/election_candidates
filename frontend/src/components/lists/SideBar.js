@@ -20,14 +20,19 @@ export default class SideBar extends Component {
   sliderChange(res){
 this.setState({min:res[0],max:res[1]});
   }
+  searchHandle(e){
+    this.props.getSearchedText(e.target.value)
+  }
   render() {
     //const aboutUs = <Translate type="text" content="navbar.aboutUs" />//about
     return (
       <div className="right-bar col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
         <div className="search">
-          <input type="text" name="search" id="search" placeholder="Search.." />
+          <input onChange={this.searchHandle.bind(this)} type="text" name="search" id="search" placeholder="Search.." />
           <button><i className="fa fa-search"></i></button>
         </div>
+
         <div className="right-bar-categories">
           <h3 className="right-bar-title"><i className="fa fa-filter"></i> Filter</h3>
           <p className='filterSubtitleFirst'> List Types : </p>

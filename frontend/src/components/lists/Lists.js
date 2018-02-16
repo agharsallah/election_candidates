@@ -5,11 +5,12 @@ import SideBar from './SideBar';
 import Card from './Card';
 import axios from 'axios' ;
 import config from '../../config' ;
+import fuzzy from 'fuzzy';
 
 export default class Lists extends Component {
   constructor(props) {
     super(props);
-    this.state = { munName: '',lists: [] }
+    this.state = { munName: '',lists:[],modifiedList:[] }
   }
 
   componentWillMount() {
@@ -30,17 +31,34 @@ export default class Lists extends Component {
     })
     .then(response=>{
         console.log(response.data);
-        this.setState({lists:response.data});
+        this.setState({lists:response.data,modifiedList:response.data});
     }
     )
     .catch(function (error) {
         console.log(error);
     });
   }
+  handleSearchedText(searched){
+    //console.log(searched);
+    var lists = this.state.lists;
+    this.fuzzy_func(searched, lists, 'listName')
+  }
+  fuzzy_func(input, lists, param) {
 
+    var options = { extract: function (el) { return el[param]; } };
+    var results = fuzzy.filter(input, lists, options);
+    console.log(results);
+    var res = []
+    results.map((item) => { res.push(item.original) 
+    console.log(item);
+    })
+    this.setState({ modifiedList: res });
+}
   render() {
     //const aboutUs = <Translate type="text" content="navbar.aboutUs" />//about
-    
+    var renderedLists=[];
+    this.state.modifiedList.length<this.state.lists.length?renderedLists=this.state.modifiedList:renderedLists=this.state.lists;
+    console.log('sssssssssssssss',renderedLists);
     return (
       <div>
 
@@ -49,17 +67,17 @@ export default class Lists extends Component {
         <div className="blog blog-2">
           <div className="container">
             <div className="row">
-              <SideBar />
+              <SideBar getSearchedText={this.handleSearchedText.bind(this)} />
+
               <div className="blog-container col-lg-9 col-md-9 col-sm-9 col-xs-12">
                 <div className="row">
-                {(this.state.lists).map(function(object,i){
+                {(renderedLists).map(function(object,i){
                   console.log(object);
-                  let hashColor;let obj=object._id
-                  obj.listType=='party'?hashColor='#09729e':(obj.listType=='independent'?hashColor='#00acdb':hashColor='#2491d0')
-                  return <Card key={i} hashtagColor={hashColor} listType='Party ' listName='List Name a'  />
+                  let hashColor;
+                  object.listType=='party'?hashColor='#09729e':(object.listType=='independent'?hashColor='#00acdb':hashColor='#2491d0')
+                  return <Card key={i} hashtagColor={hashColor} listType={object.listType} listName={object.listName}  />
                 })}
                 
-              
                {/*  <Card hashtagColor='#09729e' listType='Party ' listName='List Name a'  />
                 <Card hashtagColor='#2491d0' listType='Coalition' listName='List Name b' />
                 <Card hashtagColor='#09729e' listType='Party ' listName='List Name c' />
