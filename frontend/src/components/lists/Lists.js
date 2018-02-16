@@ -6,6 +6,7 @@ import Card from './Card';
 import axios from 'axios' ;
 import config from '../../config' ;
 import fuzzy from 'fuzzy';
+import ReactLoading from 'react-loading';
 
 export default class Lists extends Component {
   constructor(props) {
@@ -71,12 +72,18 @@ export default class Lists extends Component {
 
               <div className="blog-container col-lg-9 col-md-9 col-sm-9 col-xs-12">
                 <div className="row">
-                {(renderedLists).map(function(object,i){
-                  console.log(object);
-                  let hashColor;
-                  object.listType=='party'?hashColor='#09729e':(object.listType=='independent'?hashColor='#00acdb':hashColor='#2491d0')
-                  return <Card key={i} hashtagColor={hashColor} listType={object.listType} listName={object.listName}  />
-                })}
+                {renderedLists.length==0?
+                   <article style={{marginTop:'25%', textAlign:'center'}}>
+                   <h2>no result found ..</h2>
+                   <ReactLoading className="col-xs-offset-6" type="spokes" color="#444" />
+                 </article>
+                  :
+                  (renderedLists).map(function(object,i){
+                    let hashColor;
+                    object.listType=='party'?hashColor='#09729e':(object.listType=='independent'?hashColor='#00acdb':hashColor='#2491d0')
+                    return <Card key={i} hashtagColor={hashColor} listType={object.listType} listName={object.listName}  />
+                  })
+                }
                 
                {/*  <Card hashtagColor='#09729e' listType='Party ' listName='List Name a'  />
                 <Card hashtagColor='#2491d0' listType='Coalition' listName='List Name b' />
